@@ -1,0 +1,8 @@
+# Local-only files (never published)
+backup/
+design/
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+.vercel
