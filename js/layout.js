@@ -143,7 +143,6 @@ export function photoHero({ path, x, y, zoom }, innerHtml, extraClass = '') {
           <img src="${esc(imageUrl(path))}" alt="" fetchpriority="high" decoding="async"
                style="object-position:${fx}% ${fy}%; transform-origin:${fx}% ${fy}%; --z:${z}">
         </div>
-        ${stampHtml}
       </div>
       <div class="container hero-grid">${innerHtml}</div>
     </section>`;

@@ -1,7 +1,7 @@
 // Service worker: keeps the site's files and photos on the visitor's device,
 // so repeat visits open instantly even on a slow connection.
 // Bump VERSION after publishing changes to CSS/JS so visitors get the new files.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const STATIC = `ms-static-${VERSION}`;
 const IMAGES = 'ms-images-v1';
 
