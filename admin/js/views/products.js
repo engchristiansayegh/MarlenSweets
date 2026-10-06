@@ -162,7 +162,7 @@ export async function productEdit(el, id, ctx) {
   el.innerHTML = `
     ${pageHead(isNew ? 'منتج جديد' : 'تعديل المنتج', {
       back: '#/products',
-      actions: isNew ? '' : `<a class="btn btn--ghost btn--sm" href="/product.html?p=${encodeURIComponent(p.slug)}" target="_blank" rel="noopener">${ic.external}<span>عرض في الموقع</span></a>`,
+      actions: isNew ? '' : `<a class="btn btn--ghost btn--sm" href="../product.html?p=${encodeURIComponent(p.slug)}" target="_blank" rel="noopener">${ic.external}<span>عرض في الموقع</span></a>`,
     })}
     <form class="form" novalidate>
       <section class="card">

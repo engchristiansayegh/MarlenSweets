@@ -37,7 +37,7 @@ export async function dashboard(el) {
       <a class="quick-item" href="#/products/new">${ic.plus}<span>إضافة منتج</span></a>
       <a class="quick-item" href="#/categories/new">${ic.grid}<span>إضافة تصنيف</span></a>
       <a class="quick-item" href="#/restore">${ic.image}<span>أدوات الصور</span></a>
-      <a class="quick-item" href="/" target="_blank" rel="noopener">${ic.external}<span>فتح الموقع</span></a>
+      <a class="quick-item" href="../" target="_blank" rel="noopener">${ic.external}<span>فتح الموقع</span></a>
     </div>
 
     <div class="tip">

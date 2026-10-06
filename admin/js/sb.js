@@ -1,5 +1,5 @@
 // Supabase client for the admin panel (library is self-hosted in /admin/vendor).
-import { SUPABASE_URL, SUPABASE_KEY, MEDIA_BUCKET } from '/js/config.js';
+import { SUPABASE_URL, SUPABASE_KEY, MEDIA_BUCKET } from '../../js/config.js';
 
 export const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: { persistSession: true, storageKey: 'ms_admin_auth_v2', flowType: 'pkce' },

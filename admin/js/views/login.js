@@ -45,7 +45,7 @@ export function loginView(el) {
     if (!email) { toast('اكتبي بريدك الإلكتروني أولًا ثم اضغطي "نسيتِ كلمة المرور".', 'error'); form.email.focus(); return; }
     try {
       await busy(e.currentTarget, 'جارٍ الإرسال…', async () => {
-        const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: `${location.origin}/admin/` });
+        const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: new URL('./', location.href).href });
         if (error) throw error;
       });
       toast('أرسلنا رابط تغيير كلمة المرور إلى بريدك. افتحيه من نفس هذا المتصفح.', 'success', 9000);

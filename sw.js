@@ -1,18 +1,18 @@
 // Service worker: keeps the site's files and photos on the visitor's device,
 // so repeat visits open instantly even on a slow connection.
 // Bump VERSION after publishing changes to CSS/JS so visitors get the new files.
-const VERSION = 'v3';
+const VERSION = 'v4';
 const STATIC = `ms-static-${VERSION}`;
 const IMAGES = 'ms-images-v1';
 
 const CORE = [
-  '/', '/index.html', '/gallery.html', '/product.html', '/about.html', '/faq.html', '/contact.html',
-  '/css/fonts.css', '/css/style.css',
-  '/js/config.js', '/js/api.js', '/js/i18n.js', '/js/icons.js', '/js/layout.js',
-  '/js/pages/home.js', '/js/pages/gallery.js', '/js/pages/product.js', '/js/pages/about.js', '/js/pages/faq.js', '/js/pages/contact.js',
-  '/assets/logo-mask.png', '/assets/favicon.svg',
-  '/fonts/tajawal-arabic-400-normal.woff2', '/fonts/tajawal-arabic-500-normal.woff2', '/fonts/tajawal-arabic-700-normal.woff2',
-  '/fonts/el-messiri-arabic-600-normal.woff2',
+  './', 'index.html', 'gallery.html', 'product.html', 'about.html', 'faq.html', 'contact.html',
+  'css/fonts.css', 'css/style.css',
+  'js/config.js', 'js/api.js', 'js/i18n.js', 'js/icons.js', 'js/layout.js',
+  'js/pages/home.js', 'js/pages/gallery.js', 'js/pages/product.js', 'js/pages/about.js', 'js/pages/faq.js', 'js/pages/contact.js',
+  'assets/logo-mask.png', 'assets/favicon.svg',
+  'fonts/tajawal-arabic-400-normal.woff2', 'fonts/tajawal-arabic-500-normal.woff2', 'fonts/tajawal-arabic-700-normal.woff2',
+  'fonts/el-messiri-arabic-600-normal.woff2',
 ];
 
 self.addEventListener('install', (e) => {
@@ -59,6 +59,6 @@ self.addEventListener('fetch', (e) => {
 
   if (url.pathname.includes('/storage/v1/object/public/')) { e.respondWith(imageFirst(req)); return; }
   if (url.origin !== self.location.origin) return;           // data (Supabase REST) is handled by the page itself
-  if (url.pathname.startsWith('/admin') || url.pathname.startsWith('/backup')) return; // never cache the admin
+  if (/\/(admin|backup)(\/|$)/.test(url.pathname)) return; // never cache the admin
   e.respondWith(staleWhileRevalidate(req));
 });

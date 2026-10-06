@@ -49,8 +49,8 @@ code { background: var(--c-cream-2); padding: 0.1em 0.4em; border-radius: 6px; f
 .logo {
   display: inline-block; aspect-ratio: 2.028;
   background: var(--logo-color, var(--c-choco));
-  -webkit-mask: url('/assets/logo-mask.png') center / contain no-repeat;
-  mask: url('/assets/logo-mask.png') center / contain no-repeat;
+  -webkit-mask: url('../assets/logo-mask.png') center / contain no-repeat;
+  mask: url('../assets/logo-mask.png') center / contain no-repeat;
 }
 
 /* ------------------------------------------------------------------ buttons */

@@ -22,9 +22,9 @@ export function paragraphs(text) {
     .join('');
 }
 
-export const productUrl = (p) => `/product.html?p=${encodeURIComponent(p.slug)}`;
-export const categoryUrl = (c) => `/gallery.html?c=${encodeURIComponent(c.slug)}`;
-export const occasionUrl = (o) => `/gallery.html?o=${encodeURIComponent(o.slug)}`;
+export const productUrl = (p) => `product.html?p=${encodeURIComponent(p.slug)}`;
+export const categoryUrl = (c) => `gallery.html?c=${encodeURIComponent(c.slug)}`;
+export const occasionUrl = (o) => `gallery.html?o=${encodeURIComponent(o.slug)}`;
 
 export function formatPhone(num) {
   const d = String(num || '').replace(/\D/g, '');
@@ -34,11 +34,11 @@ export function formatPhone(num) {
 
 export function waLink(settings, product) {
   const num = String(settings?.whatsapp || '').replace(/\D/g, '');
-  if (!num) return '/contact.html';
+  if (!num) return 'contact.html';
   let text;
   if (product) {
     const tpl = pick(settings, 'whatsapp_message') || '{product}';
-    text = `${tpl.replaceAll('{product}', pick(product, 'name'))}\n${location.origin}${productUrl(product)}`;
+    text = `${tpl.replaceAll('{product}', pick(product, 'name'))}\n${new URL(productUrl(product), location.href).href}`;
   } else {
     text = getLang() === 'ar' ? 'مرحبًا Marlen Sweets 🌸' : 'Hello Marlen Sweets 🌸';
   }
@@ -199,17 +199,17 @@ export const cakeArt = `
 /* ---------------------------------------------------------------- header / footer */
 
 const NAV = [
-  { key: 'home', href: '/index.html' },
-  { key: 'gallery', href: '/gallery.html' },
-  { key: 'about', href: '/about.html' },
-  { key: 'faq', href: '/faq.html' },
-  { key: 'contact', href: '/contact.html' },
+  { key: 'home', href: 'index.html' },
+  { key: 'gallery', href: 'gallery.html' },
+  { key: 'about', href: 'about.html' },
+  { key: 'faq', href: 'faq.html' },
+  { key: 'contact', href: 'contact.html' },
 ];
 
 function headerHtml(page, settings) {
   return `
     <div class="container header-inner">
-      <a class="brand" href="/index.html" aria-label="Marlen Sweets">${logo('logo--header')}</a>
+      <a class="brand" href="index.html" aria-label="Marlen Sweets">${logo('logo--header')}</a>
       <nav class="nav" id="site-nav" aria-label="${t('nav.menu')}">
         <div class="nav-links">
           ${NAV.map((n) => `<a href="${n.href}" class="${n.key === page ? 'is-active' : ''}" ${n.key === page ? 'aria-current="page"' : ''}>${t(`nav.${n.key}`)}</a>`).join('')}
@@ -439,7 +439,7 @@ export async function boot({ page, load, render, title, mount }) {
   // keep files + photos on the device for instant repeat visits (not on the local preview,
   // where it would hide your latest edits)
   if ('serviceWorker' in navigator && !['localhost', '127.0.0.1'].includes(location.hostname)) {
-    navigator.serviceWorker.register('/sw.js').catch((e) => console.warn('sw', e));
+    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('sw', e));
   }
 
   // Showed saved data from a previous visit → fetch fresh data and update quietly if it changed.

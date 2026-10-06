@@ -1,5 +1,5 @@
 // Small UI toolkit for the admin: icons, toasts, confirm dialog, form helpers, errors.
-import { icons as siteIcons } from '/js/icons.js';
+import { icons as siteIcons } from '../../js/icons.js';
 
 const line = (d) =>
   `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;

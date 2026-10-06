@@ -1,6 +1,6 @@
 // Image helpers: shrink photos in the browser before upload (saves storage + makes the site fast).
 import { storage } from './sb.js';
-import { imageUrl } from '/js/api.js';
+import { imageUrl } from '../../js/api.js';
 
 export { imageUrl };
 

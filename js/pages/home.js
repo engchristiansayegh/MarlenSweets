@@ -10,7 +10,7 @@ function heroText(s) {
       <h1 class="hero-title hero-in" style="--i:1">${esc(pick(s, 'hero_title'))}</h1>
       <p class="hero-sub hero-in" style="--i:2">${esc(pick(s, 'hero_subtitle'))}</p>
       <div class="hero-actions hero-in" style="--i:3">
-        <a class="btn btn--primary btn--lg" href="/gallery.html">${t('hero.cta_gallery')} ${icon('arrow')}</a>
+        <a class="btn btn--primary btn--lg" href="gallery.html">${t('hero.cta_gallery')} ${icon('arrow')}</a>
         <a class="btn btn--ghost btn--lg" href="${esc(waLink(s))}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${t('hero.cta_whatsapp')}</span></a>
       </div>
     </div>`;
@@ -73,7 +73,7 @@ boot({
 
     <section class="section">
       <div class="container">
-        ${sectionHead(t('sec.categories'), t('sec.categories_sub'), { href: '/gallery.html', label: t('sec.view_all') })}
+        ${sectionHead(t('sec.categories'), t('sec.categories_sub'), { href: 'gallery.html', label: t('sec.view_all') })}
         <div class="category-grid">
           ${data.categories.map((c, i) => categoryCard(c, data.counts[c.id], i)).join('')}
         </div>
@@ -83,7 +83,7 @@ boot({
     ${data.featured.length ? `
     <section class="section section--tint">
       <div class="container">
-        ${sectionHead(t('sec.featured'), t('sec.featured_sub'), { href: '/gallery.html?all=1', label: t('sec.view_all') })}
+        ${sectionHead(t('sec.featured'), t('sec.featured_sub'), { href: 'gallery.html?all=1', label: t('sec.view_all') })}
         <div class="product-grid">
           ${data.featured.map((p, i) => productCard(p, s, i)).join('')}
         </div>

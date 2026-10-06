@@ -3,7 +3,7 @@ import { sb, q, remembered, forget } from '../sb.js';
 import { ic, esc, toast, confirmDialog, friendlyError, busy, field, toggle, formData, slugify, pageHead, thumb, loadingView, errorView } from '../ui.js';
 import { imageUrl, uploadImage, removeFiles } from '../images.js';
 import { singleImagePicker } from '../pickers.js';
-import { icon, OCCASION_ICONS } from '/js/icons.js';
+import { icon, OCCASION_ICONS } from '../../../js/icons.js';
 
 const CONF = {
   categories: {
@@ -106,7 +106,7 @@ export async function taxonomyEdit(el, kind, id, ctx) {
   el.innerHTML = `
     ${pageHead(isNew ? c.add : `تعديل ${c.one}`, {
       back: c.route,
-      actions: isNew ? '' : `<a class="btn btn--ghost btn--sm" href="/gallery.html?${kind === 'categories' ? 'c' : 'o'}=${encodeURIComponent(r.slug)}" target="_blank" rel="noopener">${ic.external}<span>عرض في الموقع</span></a>`,
+      actions: isNew ? '' : `<a class="btn btn--ghost btn--sm" href="../gallery.html?${kind === 'categories' ? 'c' : 'o'}=${encodeURIComponent(r.slug)}" target="_blank" rel="noopener">${ic.external}<span>عرض في الموقع</span></a>`,
     })}
     <form class="form" novalidate>
       <section class="card">

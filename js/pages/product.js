@@ -156,7 +156,7 @@ function renderPage({ product: p, related }, s) {
         <section class="section">
           <div class="container">
             ${emptyState(t('product.notfound'), t('product.notfound_sub'))}
-            <p class="center"><a class="btn btn--primary" href="/gallery.html">${t('product.back')}</a></p>
+            <p class="center"><a class="btn btn--primary" href="gallery.html">${t('product.back')}</a></p>
           </div>
         </section>`;
     }
@@ -165,8 +165,8 @@ function renderPage({ product: p, related }, s) {
       <section class="section product-page">
         <div class="container">
           <nav class="breadcrumb" aria-label="breadcrumb">
-            <a href="/index.html">${t('nav.home')}</a>${icon('chevron')}
-            <a href="/gallery.html">${t('gallery.title')}</a>${icon('chevron')}
+            <a href="index.html">${t('nav.home')}</a>${icon('chevron')}
+            <a href="gallery.html">${t('gallery.title')}</a>${icon('chevron')}
             ${p.category ? `<a href="${categoryUrl(p.category)}">${esc(pick(p.category, 'name'))}</a>${icon('chevron')}` : ''}
             <span aria-current="page">${esc(name)}</span>
           </nav>

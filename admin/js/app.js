@@ -53,7 +53,7 @@ function shell(email) {
           ${NAV.map((n) => `<a href="${n.hash}" data-nav="${n.hash}">${n.icon}<span>${n.label}</span></a>`).join('')}
         </nav>
         <div class="sidebar-foot">
-          <a href="/" target="_blank" rel="noopener">${ic.external}<span>فتح الموقع</span></a>
+          <a href="../" target="_blank" rel="noopener">${ic.external}<span>فتح الموقع</span></a>
           <button type="button" data-act="logout">${ic.logout}<span>تسجيل الخروج</span></button>
           <small class="muted" dir="ltr">${esc(email)}</small>
         </div>
@@ -61,7 +61,7 @@ function shell(email) {
       <header class="topbar">
         <a href="#/" class="topbar-brand"><span class="logo logo--top" role="img" aria-label="Marlen Sweets"></span></a>
         <div class="topbar-actions">
-          <a class="icon-btn" href="/" target="_blank" rel="noopener" aria-label="فتح الموقع">${ic.external}</a>
+          <a class="icon-btn" href="../" target="_blank" rel="noopener" aria-label="فتح الموقع">${ic.external}</a>
           <button class="icon-btn" type="button" data-act="logout" aria-label="تسجيل الخروج">${ic.logout}</button>
         </div>
       </header>

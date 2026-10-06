@@ -47,8 +47,8 @@ boot({
     return { categories, occasions, counts, category, occasion, products };
   },
   render: (d, s) => {
-    const home = { href: '/index.html', label: t('nav.home') };
-    const gallery = { href: '/gallery.html', label: t('gallery.title') };
+    const home = { href: 'index.html', label: t('nav.home') };
+    const gallery = { href: 'gallery.html', label: t('gallery.title') };
 
     // Category or occasion page
     if (d.category || d.occasion) {
@@ -59,7 +59,7 @@ boot({
         ${pageHeader(pick(item, 'name'), pick(item, 'description'), [home, gallery, { label: pick(item, 'name') }])}
         <section class="section section--tight">
           <div class="container">
-            ${chips(list, item, urlFn, '/gallery.html?all=1')}
+            ${chips(list, item, urlFn, 'gallery.html?all=1')}
             ${productsSection(d.products, s)}
           </div>
         </section>
@@ -72,7 +72,7 @@ boot({
         ${pageHeader(t('gallery.all'), t('gallery.sub'), [home, gallery, { label: t('gallery.all') }])}
         <section class="section section--tight">
           <div class="container">
-            ${chips(d.categories, null, categoryUrl, '/gallery.html?all=1')}
+            ${chips(d.categories, null, categoryUrl, 'gallery.html?all=1')}
             ${productsSection(d.products, s)}
           </div>
         </section>
@@ -86,7 +86,7 @@ boot({
         <div class="container">
           <div class="section-head" data-reveal>
             <div><h2 class="section-title">${t('gallery.categories')}</h2></div>
-            <a class="link-arrow" href="/gallery.html?all=1">${t('gallery.all')} ${icon('arrow')}</a>
+            <a class="link-arrow" href="gallery.html?all=1">${t('gallery.all')} ${icon('arrow')}</a>
           </div>
           <div class="category-grid">
             ${d.categories.map((c, i) => categoryCard(c, d.counts[c.id], i)).join('')}

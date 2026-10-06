@@ -56,7 +56,7 @@ export async function restoreView(el) {
     const btn = e.currentTarget;
     let data;
     try {
-      data = await (await fetch('/backup/data.json', { cache: 'no-store' })).json();
+      data = await (await fetch('../backup/data.json', { cache: 'no-store' })).json();
     } catch {
       toast('لم يتم العثور على النسخة الاحتياطية. هذه الأداة تعمل فقط على الكمبيوتر (localhost).', 'error');
       return;
@@ -72,7 +72,7 @@ export async function restoreView(el) {
           const p = list[i];
           setLabel(`جارٍ رفع الصورة ${i + 1} من ${list.length}…`);
           try {
-            const blob = await (await fetch(`/backup/media/${p}`)).blob();
+            const blob = await (await fetch(`../backup/media/${p}`)).blob();
             const { error } = await storage().upload(p, blob, { contentType: blob.type || 'image/webp', cacheControl: '31536000', upsert: true });
             if (error) throw error;
             ok++;
