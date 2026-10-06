@@ -105,3 +105,6 @@ $$;
 
 revoke all on function public.admin_stats() from public, anon;
 grant execute on function public.admin_stats() to authenticated;
+
+-- make the API see the new functions right away
+notify pgrst, 'reload schema';
