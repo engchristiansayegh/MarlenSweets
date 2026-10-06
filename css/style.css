@@ -175,12 +175,9 @@ html[lang='en'] .kicker { text-transform: uppercase; letter-spacing: 0.1em; font
   transition: background-color 0.35s, box-shadow 0.35s;
   view-transition-name: site-header;
 }
-.site-header.is-scrolled {
-  background: rgb(74 47 34 / 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgb(58 37 26 / 0.18);
-}
+/* no backdrop-filter here: it would turn the header into the containing block of the
+   fixed mobile menu, squeezing the menu to the header's height */
+.site-header.is-scrolled { box-shadow: 0 8px 24px rgb(58 37 26 / 0.18); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { display: flex; align-items: center; transition: transform 0.3s var(--ease); }
 .brand:hover { transform: scale(1.04); }
